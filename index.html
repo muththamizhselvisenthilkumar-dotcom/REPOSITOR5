@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Courier Tracking System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 15px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Courier Tracking System</h2>
+  <form action="/submit_tracking" method="post">
+    
+    <!-- Tracking Number -->
+    <label for="trackingNumber">Tracking Number</label>
+    <input type="text" id="trackingNumber" name="trackingNumber" required>
+
+    <!-- Sender Information -->
+    <h3>Sender Information</h3>
+    <label for="senderName">Name</label>
+    <input type="text" id="senderName" name="senderName" required>
+
+    <label for="senderPhone">Phone</label>
+    <input type="tel" id="senderPhone" name="senderPhone" required>
+
+    <label for="senderEmail">Email</label>
+    <input type="email" id="senderEmail" name="senderEmail">
+
+    <label for="senderAddress">Address</label>
+    <textarea id="senderAddress" name="senderAddress" rows="3" required></textarea>
+
+    <!-- Receiver Information -->
+    <h3>Receiver Information</h3>
+    <label for="receiverName">Name</label>
+    <input type="text" id="receiverName" name="receiverName" required>
+
+    <label for="receiverPhone">Phone</label>
+    <input type="tel" id="receiverPhone" name="receiverPhone" required>
+
+    <label for="receiverEmail">Email</label>
+    <input type="email" id="receiverEmail" name="receiverEmail">
+
+    <label for="receiverAddress">Address</label>
+    <textarea id="receiverAddress" name="receiverAddress" rows="3" required></textarea>
+
+    <!-- Package Information -->
+    <h3>Package Information</h3>
+    <label for="packageWeight">Weight (kg)</label>
+    <input type="number" id="packageWeight" name="packageWeight" step="0.01" required>
+
+    <label for="packageDimensions">Dimensions (L x W x H in cm)</label>
+    <input type="text" id="packageDimensions" name="packageDimensions" placeholder="e.g. 30x20x15">
+
+    <label for="packageType">Package Type</label>
+    <select id="packageType" name="packageType" required>
+      <option value="">Select type</option>
+      <option value="document">Document</option>
+      <option value="parcel">Parcel</option>
+      <option value="fragile">Fragile</option>
+      <option value="perishable">Perishable</option>
+    </select>
+
+    <!-- Delivery Information -->
+    <h3>Delivery Information</h3>
+    <label for="pickupDate">Pickup Date</label>
+    <input type="date" id="pickupDate" name="pickupDate" required>
+
+    <label for="deliveryDate">Expected Delivery Date</label>
+    <input type="date" id="deliveryDate" name="deliveryDate">
+
+    <label for="deliveryStatus">Delivery Status</label>
+    <select id="deliveryStatus" name="deliveryStatus" required>
+      <option value="pending">Pending</option>
+      <option value="in_transit">In Transit</option>
+      <option value="delivered">Delivered</option>
+      <option value="delayed">Delayed</option>
+    </select>
+
+    <!-- Submit Button -->
+    <button type="submit">Submit Tracking Info</button>
+  </form>
+
+</body>
+</html>
